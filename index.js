@@ -29,6 +29,7 @@ app.get("/", function (req, res) {
 
 app.post(
   "/decrypt",
+  console.log("text");
   upload.fields([
     {
       name: "secret",
