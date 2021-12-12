@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 // const __dirname = path.resolve();
 
-const app = express();
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
