@@ -40,16 +40,17 @@ app.post(
     },
   ]),
   (req, res, next) => {
+    console.log("text");
     const files = req.files;
+    console.log("text1");
 
     if (!files) {
       const error = new Error("Please choose files");
       error.httpStatusCode = 400;
       return next(error);
     }
-    console.log("text");
+    
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
-    console.log("text1");
     const decrypted = new nodersa(privateKey).decrypt(
       fs.readFileSync("./uploads/secret"),
       "utf8"
