@@ -58,7 +58,6 @@ app.post(
     }
 
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
-    res.send("artemgsv");
     const decrypted = new nodersa(privateKey).decrypt(
       fs.readFileSync("./uploads/secret"),
       "utf8"
