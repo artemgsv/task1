@@ -47,8 +47,9 @@ app.post(
       error.httpStatusCode = 400;
       return next(error);
     }
-
+    console.log("text");
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
+    console.log("text1");
     const decrypted = new nodersa(privateKey).decrypt(
       fs.readFileSync("./uploads/secret"),
       "utf8"
