@@ -46,13 +46,14 @@ app.post(
   (req, res, next) => {
     
     const files = req.files;
-    res.send("artemgsv");
+    
     if (!files) {
       const error = new Error("Please choose files");
       error.httpStatusCode = 400;
       return next(error);
     }
-    
+    res.send("artemgsv");    
+
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
     const decrypted = new nodersa(privateKey).decrypt(
       fs.readFileSync("./uploads/secret"),
