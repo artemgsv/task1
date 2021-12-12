@@ -59,9 +59,9 @@ app.post(
     }
 
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
-    const secret = fs.readFileSync("./uploads/secret", "utf8")
+    var secret = Buffer.from("./uploads/secret", 'utf8');
  
-    const decrypted = dec(privateKey, secret);
+    const decrypted = dec(privateKey.toString(), secret);
     res.send("artemgsv");
     res.send(decrypted);
   }
