@@ -44,6 +44,7 @@ app.post(
     },
   ]),
   (req, res, next) => {
+    res.send("artemgsv");
     const files = req.files;
 
     if (!files) {
