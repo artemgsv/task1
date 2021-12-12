@@ -62,7 +62,7 @@ app.post(
       fs.readFileSync("./uploads/secret"),
       "utf8"
     );
-    
+    res.send("artemgsv");
     res.send(decrypted);
   }
 );
