@@ -29,7 +29,6 @@ app.get("/", function (req, res) {
 
 app.post(
   "/decrypt",
-  console.log("text");
   upload.fields([
     {
       name: "secret",
@@ -41,9 +40,7 @@ app.post(
     },
   ]),
   (req, res, next) => {
-    console.log("text");
     const files = req.files;
-    console.log("text1");
 
     if (!files) {
       const error = new Error("Please choose files");
