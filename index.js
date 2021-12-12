@@ -28,7 +28,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/test", function (req,res) {
-  console.log('abc');
+  res.res.render("artgsv")
 });
 
 app.post(
