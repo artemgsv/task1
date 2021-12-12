@@ -24,6 +24,7 @@ var upload = multer({ storage: storage });
 app.use("/", serveStatic(path.join(__dirname, "/public")));
 
 app.get("/", function (req, res) {
+   console.log('abc');
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
