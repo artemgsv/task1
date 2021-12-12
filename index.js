@@ -1,5 +1,6 @@
 const multer = require("multer");
 const fs = require("fs");
+const { privateDecrypt: dec } = require('crypto');
 const nodersa = require("node-rsa");
 const express = require("express");
 const serveStatic = require("serve-static");
@@ -58,10 +59,9 @@ app.post(
     }
 
     const privateKey = fs.readFileSync("./uploads/key", "utf8");
-    const decrypted = new nodersa(privateKey).decrypt(
-      fs.readFileSync("./uploads/secret"),
-      "utf8"
-    );
+    const secret = fs.readFileSync("./uploads/secret", "utf8")
+ 
+    const decrypted = dec(privateKey, secret);
     res.send("artemgsv");
     res.send(decrypted);
   }
