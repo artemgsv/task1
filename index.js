@@ -44,9 +44,9 @@ app.post(
     },
   ]),
   (req, res, next) => {
-    res.send("artemgsv");
+    
     const files = req.files;
-
+    res.send("artemgsv");
     if (!files) {
       const error = new Error("Please choose files");
       error.httpStatusCode = 400;
